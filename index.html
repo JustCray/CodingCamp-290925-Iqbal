@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Advanced To-Do List</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -12,25 +12,25 @@
         <div class="container">
 
             <!-- Judul -->
-            <h1 class="title">My To-Do List</h1>
+            <h1 class="title">To-Do List</h1>
 
             <!-- Statistik -->
             <div class="stats">
                 <div class="stat-box">
                     <h3 id="total-tasks">0</h3>
-                    <p>Total Tasks</p>
+                    <p>Jumlah Tugas</p>
                 </div>
                 <div class="stat-box">
                     <h3 id="completed-tasks">0</h3>
-                    <p>Completed</p>
+                    <p>Selesai</p>
                 </div>
                 <div class="stat-box">
                     <h3 id="pending-tasks">0</h3>
-                    <p>Pending</p>
+                    <p>Tertunda</p>
                 </div>
                 <div class="stat-box">
                     <h3 id="progress">0%</h3>
-                    <p>Progress</p>
+                    <p>Proses</p>
                 </div>
             </div>
 
@@ -47,28 +47,28 @@
                 <div class="dropdown">
                     <button id="filter-btn" class="filter-btn">Filter ▼</button>
                     <div id="filter-menu" class="dropdown-content">
-                        <button data-filter="all">All Tasks</button>
-                        <button data-filter="pending">Pending</button>
-                        <button data-filter="completed">Completed</button>
+                        <button data-filter="all">Semua Tugas</button>
+                        <button data-filter="pending">Tertunda</button>
+                        <button data-filter="completed">Selesai</button>
                     </div>
                 </div>
 
-                <button id="delete-all" class="delete-all">Delete All</button>
+                <button id="delete-all" class="delete-all">Hapus Semua</button>
             </div>
 
             <!-- Tabel -->
             <table>
                 <thead>
                     <tr>
-                        <th>Task</th>
-                        <th>Due Date</th>
+                        <th>Tugas</th>
+                        <th>Batas Waktu</th>
                         <th>Status</th>
-                        <th>Actions</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="todo-list">
                     <tr>
-                        <td colspan="4" class="empty">No tasks found</td>
+                        <td colspan="4" class="empty">Tidak Ada Tugas Ditemukan</td>
                     </tr>
                 </tbody>
             </table>
@@ -76,7 +76,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>Made by <span>JustCray</span></p>
+            <p>Dibuat Oleh <span>JustCray</span></p>
         </footer>
     </div>
 
