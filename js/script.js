@@ -12,6 +12,17 @@ const progressEl = document.getElementById("progress");
 
 let tasks = [];
 
+// Local Storage
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+function loadTasks() {
+    const saved = localStorage.getItem("tasks");
+    if (saved) {
+        tasks = JSON.parse(saved);
+    }
+}
+
 // Tambah task
 todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -29,6 +40,7 @@ todoForm.addEventListener("submit", (e) => {
     };
 
     tasks.push(newTask);
+    saveTasks();
     renderTasks();
 
     // reset input
@@ -70,12 +82,14 @@ function renderTasks(filter = "all") {
             // Aksi tombol Done/Undo
             row.querySelector(".complete").addEventListener("click", () => {
                 task.completed = !task.completed;
+                saveTasks();
                 renderTasks(filter);
             });
 
             // Aksi tombol Delete
             row.querySelector(".delete").addEventListener("click", () => {
                 tasks = tasks.filter(t => t.id !== task.id);
+                saveTasks();
                 renderTasks(filter);
             });
 
@@ -102,6 +116,7 @@ function updateStats() {
 // Delete All
 deleteAllBtn.addEventListener("click", () => {
     tasks = [];
+    saveTasks();
     renderTasks();
 });
 
@@ -124,4 +139,5 @@ filterMenu.querySelectorAll("button").forEach(btn => {
 });
 
 // Render awal
+loadTasks();
 renderTasks();
